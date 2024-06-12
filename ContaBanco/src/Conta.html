@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Bancária</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/SxVYub93K68?si=tbMcX-01D6X4_uiF&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+    <div class="container">
+        <h1>
+            <span class="material-symbols-outlined">payments</span>
+            Conta Bancária
+        </h1>
+        <form id="accountForm">
+            <label for="agencia"><span class="material-symbols-outlined">apartment</span> Número da Agência:</label>
+            <input type="text" id="agencia" required>
+            <label for="conta"><span class="material-symbols-outlined">description</span> Número da Conta:</label>
+            <input type="number" id="conta" required>
+            <label for="nome"><span class="material-symbols-outlined">person</span> Seu Nome:</label>
+            <input type="text" id="nome" required>
+            <button type="submit"><span class="material-symbols-outlined">send</span> Abrir Conta</button>
+        </form>
+
+        <div id="accountInfo" style="display: none;">
+            <h2><span class="material-symbols-outlined">info</span> Resumo da Conta</h2>
+            <p id="accountDetails"></p>
+            <p>Saldo atual: R$ <span id="saldo">2456.90</span></p>
+            <div class="operations">
+                <button onclick="showOperation('saque')"><span class="material-symbols-outlined">attach_money</span> Sacar</button>
+                <button onclick="showOperation('deposito')"><span class="material-symbols-outlined">account_balance_wallet</span> Depositar</button>
+            </div>
+            <div id="operationForm" style="display: none;">
+                <label id="operationLabel"></label>
+                <input type="number" id="operationValue">
+                <button onclick="performOperation()"><span class="material-symbols-outlined">check</span> Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
